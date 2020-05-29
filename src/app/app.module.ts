@@ -10,19 +10,30 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
-import { LoginComponent } from './login';
+import { LoginComponent } from './login';;
+import { UsersComponent } from './users/users.component'
+;
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { FormsModule } from '@angular/forms';
+
+import { MatToolbarModule} from '@angular/material/toolbar'
 
 @NgModule({
     imports: [
+        FormsModule      ,
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule
     ],
     declarations: [
         AppComponent,
         HomeComponent,
         LoginComponent
+,
+        UsersComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

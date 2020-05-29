@@ -1,22 +1,43 @@
 ﻿<!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
-    </div>
-</nav>
+
+ 
+<div class="header mat-elevation-z4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"  *ngIf="currentUser" > 
+        <a class="navbar-brand" href="#">User SYS RADMIN</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto">
+            <i class="material-icons icons">home</i>
+            <li class="nav-item active">
+                <a class="nav-item nav-link" routerLink="/">  Home</a>
+            </li>
+    
+            <li class="nav-item">
+                <a class="nav-item nav-link" routerLink="/users" >Usuarios</a>
+            </li>
+    
+            <li class="nav-item">
+                <a class="nav-item nav-link" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+         
+        </div>
+      </nav>
+</div>
 
 <!-- main app container -->
 <div class="container">
     <router-outlet></router-outlet>
 </div>
 
+<!-- <div class="d-flex text-center">
+    <div class="col-6">teste</div>
+    <div class="col-6">teste</div>
+
+</div> -->
+
 <!-- credits -->
-<div class="text-center mt-4">
-    <p>
-        <a href="https://jasonwatmore.com/post/2020/04/19/angular-9-jwt-authentication-example-tutorial" target="_top">Angular 9 - JWT Authentication Example & Tutorial</a>
-    </p>
-    <p>
-        <a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-    </p>
-</div>
+

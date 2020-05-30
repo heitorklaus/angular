@@ -6,9 +6,11 @@ import { User } from '@app/_models';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-    getAll() {
-        return this.http.get<User[]>(`https://buracosapp2020.herokuapp.com/api/posts/get/?size=240&page=0`);
-    }
-} 
+  getAll() {
+    return this.http.get<User[]>(
+      `https://buracosapp2020.herokuapp.com/api/posts/get/?size=240&page=0`
+    );
+  }
+}

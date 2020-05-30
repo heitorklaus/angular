@@ -3,31 +3,32 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.less']
+  styleUrls: ['./users.component.less'],
 })
 export class UsersComponent implements OnInit {
+  public address: any[] = [
+    {
+      id: 1,
+      ask: '',
+      ans_a: '',
+      ans_b: '',
+      ans_c: '',
+      ans_d: '',
+    },
+  ];
 
-  public address: any[] = [{
-    id: 1,
-    address: '',
-    street: '',
-    city: '',
-    country: ''
-  }];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   addAddress() {
     this.address.push({
       id: this.address.length + 1,
-      address: '',
-      street: '',
-      city: '',
-      country: ''
+      ask: '',
+      ans_a: '',
+      ans_b: '',
+      ans_c: '',
+      ans_d: '',
     });
   }
 
@@ -35,14 +36,12 @@ export class UsersComponent implements OnInit {
     this.address.splice(i, 1);
   }
   getData(i: number) {
-
-    for(let key in this.address) {
-      console.log(this.address[key].city);
-      }
-
+    for (let key in this.address) {
+      console.log(this.address[key].ask);
+    }
   }
 
   logValue() {
-   // console.log(this.address);
+    //console.log(this.address);
   }
 }
